@@ -1,0 +1,58 @@
+<h2>Doctor Dashboard</h2>
+<p>Welcome, Dr. {{ user.first_name }} {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}</p>
+{% if user.profile_pic %}
+    <img src="{{ user.profile_pic.url }}" alt="Profile Pic">
+{% else %}
+    <img src="/static/images/default_profile.png" alt="Default Profile" width="100">
+{% endif %}
+
+<a href="{% url 'logout' %}">Logout</a>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            min-height: 100vh;
+        }
+        h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 22px;
+            text-align: center;
+        }
+        p {
+            margin: 8px 0;
+            font-size: 15px;
+            color: #333;
+            text-align: center;
+        }
+        img {
+            margin: 20px auto 0 auto;
+            display: block;
+            border-radius: 50%;
+            border: 2px solid #5e35b1;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        a {
+            display: block;
+            width: 140px;
+            margin: 30px auto 0 auto;
+            text-decoration: none;
+            background: #5e35b1;
+            color: white;
+            padding: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background: #452d83;
+        }
+        </style>
