@@ -1,0 +1,127 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Patient Doctor System</title>
+    <style>
+        body {
+            display: flex;                 /* enable flexbox */
+            justify-content: center;       /* horizontal center */
+            align-items: center;           /* vertical center */
+            min-height: 100vh;             /* full page height */
+            margin: 0;                     /* remove default spacing */
+            background-color: #78695a;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .form {
+            background-color: rgb(134, 198, 237);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+        }
+
+        table {
+            margin: auto;   /* keep table centered inside form */
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        input, select {
+            width: 200px;
+            padding: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <h2>Register</h2>
+        <table>
+            <tr>
+                <td><label for="role">I am a:</label></td>
+                <td>
+                    <select id="role" name="role" required>
+                        <option value="">-- Select --</option>
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" id="first_name" name="first_name" required></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" id="last_name" name="last_name" required></td>
+            </tr>
+            <tr>
+                <td><label for="username">Username:</label></td>
+                <td><input type="text" id="username" name="username" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirm_password">Confirm Password:</label></td>
+                <td><input type="password" id="confirm_password" name="confirm_password" required></td>
+            </tr>
+            <tr>
+                <td><label for="profile_pic">Profile Picture:</label></td>
+                <td><input type="file" id="profile_pic" name="profile_pic" accept="image/*"></td>
+            </tr>
+            <tr>
+                <td><label for="address1">Address Line 1:</label></td>
+                <td><input type="text" id="address1" name="address1" required></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" id="city" name="city" required></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td><input type="text" id="state" name="state" required></td>
+            </tr>
+            <tr>
+                <td><label for="pincode">Pincode:</label></td>
+                <td><input type="text" id="pincode" name="pincode" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Register</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
