@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);">
+    <h2 style="color: #333; margin-bottom: 24px; letter-spacing: 1px;">Signup</h2>
+
+    <form method="post" enctype="multipart/form-data" style="background: #fff; padding: 32px 28px 24px 28px; border-radius: 12px; box-shadow: 0 8px 32px rgba(60, 60, 120, 0.15); width: 500px; display: flex; flex-direction: column; align-items: stretch;">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" style="background: #1976d2; color: #fff; padding: 12px 0; border: none; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 10px; transition: background 0.2s;">
+            Register
+        </button>
+    </form>
+
+    <a href="{% url 'login' %}" style="display: block; margin-top: 22px; text-align: center; color: #1976d2; font-weight: 500; text-decoration: none; font-size: 15px;">
+        Already have an account? Login
+    </a>
+</div>
+{% endblock %}

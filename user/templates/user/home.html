@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patient Doctor Login System</title>
+
+
+
+
+
+
+
+    <style>
+       /* paste this into the <style> tag in your page */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* This targets your <div class="div"> */
+.div {
+  background: linear-gradient(135deg, #7b1fa2 0%, #5e35b1 100%);
+  color: #fff;
+  width: 360px;
+  max-width: 92%;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+/* Heading inside the card */
+.div h1 {
+  margin: 0 0 18px;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+/* "or" text */
+.div p {
+  margin: 12px 0;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+
+/* Links should be block so buttons fill width */
+.div a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Buttons */
+.div button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: #fff;
+  color: #5e35b1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  margin-bottom: 10px;
+  transition: transform .08s ease, background .12s ease;
+}
+
+.div button:last-of-type {
+  margin-bottom: 0;
+}
+
+.div button:hover {
+  transform: translateY(-2px);
+  background: #f1f1f1;
+}
+
+/* Small screen adjustments */
+@media (max-width: 420px) {
+  .div { padding: 20px; width: 92%; }
+  .div h1 { font-size: 1.2rem; }
+  .div button { font-size: 14px; padding: 10px; }
+}
+
+    </style>
+
+<body>
+    <div class="div">
+        <h1>Welcome to Coming Here</h1>
+
+
+
+       
+            <a href="{% url 'signup' %}">
+                <button>Register</button>
+            </a>
+       
+
+        <p>or</p>
+
+        
+            <a href="{% url 'login' %}">
+                <button>Login</button>
+            </a>
+        
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 style="margin-bottom: 20px;">My Uploaded Blogs</h2>
+
+{% if blogs %}
+<table style="width:100%; border-collapse: collapse; background: #fff; box-shadow: 0px 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
+    <thead style="background: #1976d2; color: white;">
+        <tr>
+            <th style="padding: 10px; text-align: left;">Title</th>
+            <th style="padding: 10px; text-align: left;">Category</th>
+            <th style="padding: 10px; text-align: left;">Status</th>
+            <th style="padding: 10px; text-align: left;">Created At</th>
+            <th style="padding: 10px; text-align: left;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for blog in blogs %}
+        <tr style="border-bottom: 1px solid #ddd;">
+            <td style="padding: 10px;">{{ blog.title }}</td>
+            <td style="padding: 10px;">{{ blog.category }}</td>
+            <td style="padding: 10px;">{{ blog.status }}</td>
+            <td style="padding: 10px;">{{ blog.created_at|date:"d M Y H:i" }}</td>
+            <td style="padding: 10px;">
+                <!-- Optional: you can implement edit/delete links later -->
+                <a href="#" style="color: #1976d2; text-decoration: none;">Edit</a> | 
+                <a href="#" style="color: crimson; text-decoration: none;">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>You have not uploaded any blogs yet.</p>
+{% endif %}
+
+<p style="margin-top: 20px;">
+    <a href="{% url 'doctor-blog-create' %}" style="background: #1976d2; color: white; padding: 10px 15px; border-radius: 6px; text-decoration: none;">
+        ➕ Upload New Blog
+    </a>
+</p>
+{% endblock %}

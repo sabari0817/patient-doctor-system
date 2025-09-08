@@ -1,0 +1,63 @@
+<h2>Patient Dashboard</h2>
+<p>Welcome, {{ user.first_name }} {{ user.last_name }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Address: {{ user.address_line1 }}, {{ user.city }}, {{ user.state }} - {{ user.pincode }}</p>
+{% if user.profile_pic %}
+    <img src="{{ user.profile_pic.url }}" alt="Profile Pic">
+{% else %}
+    <img src="/static/images/default_profile.png" alt="Default Profile" width="100">
+{% endif %}
+
+<h2>Patient Dashboard</h2>
+<p>Welcome, {{ user.first_name }}!</p>
+
+<a href="{% url 'patient-blog-list' %}">📖 Browse Blogs</a>
+
+<a href="{% url 'logout' %}">Logout</a>
+
+   <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: #5e35b1;
+            text-align: center;
+        }
+        p {
+            margin: 8px 0;
+            font-size: 15px;
+            line-height: 1.4;
+            text-align: center;
+        }
+        img {
+            margin: 20px auto;
+            display: block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #5e35b1;
+        }
+        a {
+            display: block;
+            width: 120px;
+            margin: 20px auto 0 auto;
+            padding: 10px 0;
+            background: #5e35b1;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background: #452d83;
+        }
+    </style>

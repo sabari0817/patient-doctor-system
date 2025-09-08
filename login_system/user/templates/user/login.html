@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: bisque;">
+    <form method="post" style="background-color: goldenrod; padding: 30px 40px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0,0,0,0.2); width: 300px; text-align: center;">
+        <h2 style="color:white;">Login</h2>
+        <br>
+        {% csrf_token %}
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <label for="username" style="display: block; margin-top: 10px; font-weight: bold; color: white; text-align: left;">Username:</label>
+        <input type="text" name="username" autocomplete="off" required style="width: 100%; padding: 8px; margin-top: 5px; border: none; border-radius: 5px;">
+
+        <label for="password" style="display: block; margin-top: 10px; font-weight: bold; color: white; text-align: left;">Password:</label>
+        <input type="password" name="password" autocomplete="off" required style="width: 100%; padding: 8px; margin-top: 5px; border: none; border-radius: 5px;">
+
+        <button type="submit" style="margin-top: 20px; padding: 10px; width: 100%; background-color: white; color: goldenrod; font-weight: bold; border: none; border-radius: 5px; cursor: pointer;">
+            Login
+        </button>
+    </form>
+</div>
+{% endblock %}
